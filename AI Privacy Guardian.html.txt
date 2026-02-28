@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Privacy Guardian Dashboard</title>
+
+<style>
+
+body{
+ font-family: Arial;
+ background:#0f172a;
+ color:white;
+ margin:0;
+ text-align:center;
+}
+
+.header{
+ background:#020617;
+ padding:20px;
+ font-size:24px;
+ font-weight:bold;
+}
+
+.risk{
+ margin:20px;
+ font-size:22px;
+}
+
+.dashboard{
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+}
+
+.card{
+ background:#1e293b;
+ margin:15px;
+ padding:20px;
+ width:300px;
+ border-radius:10px;
+}
+
+textarea,input{
+ width:90%;
+ padding:10px;
+ margin-top:10px;
+ border-radius:5px;
+ border:none;
+}
+
+button{
+ padding:10px 20px;
+ margin-top:10px;
+ cursor:pointer;
+ border:none;
+ border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🔐 AI Privacy Guardian — Cybersecurity Dashboard
+</div>
+
+<div class="risk">
+Overall Risk Score: <span id="riskScore">LOW</span>
+</div>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>🛡 Phishing Detector</h3>
+<textarea id="email" placeholder="Paste suspicious message"></textarea><br>
+<button onclick="analyze()">Analyze</button>
+<p id="result"></p>
+</div>
+
+<div class="card">
+<h3>🎥 Deepfake Scanner</h3>
+<input type="file"><br>
+<button onclick="deepfake()">Scan</button>
+<p id="deepfakeResult"></p>
+</div>
+
+<div class="card">
+<h3>🔐 Privacy Leak Scanner</h3>
+<input placeholder="Paste text or data"><br>
+<button onclick="privacy()">Scan</button>
+<p id="privacyResult"></p>
+</div>
+
+<div class="card">
+<h3>🔗 Link Safety Analyzer</h3>
+<input id="url" placeholder="Paste URL"><br>
+<button onclick="checkLink()">Check</button>
+<p id="linkresult"></p>
+</div>
+
+</div>
+
+<script>
+
+function analyze(){
+ document.getElementById("result").innerHTML="⚠️ Medium Risk Detected";
+ document.getElementById("riskScore").innerHTML="MEDIUM";
+}
+
+function deepfake(){
+ document.getElementById("deepfakeResult").innerHTML="⚠️ Possible Deepfake";
+ document.getElementById("riskScore").innerHTML="HIGH";
+}
+
+function privacy(){
+ document.getElementById("privacyResult").innerHTML="🔐 Sensitive Data Found";
+}
+
+function checkLink(){
+ document.getElementById("linkresult").innerHTML="✅ Link appears safe";
+}
+
+</script>
+
+</body>
+</html>
